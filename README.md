@@ -1,1 +1,1 @@
-Zavröni rad.
+Zavr≈°ni rad.
