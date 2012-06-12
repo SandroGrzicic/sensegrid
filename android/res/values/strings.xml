@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SenseGrid</string>
+	<!--<string name="server_url">http://sworm.no-ip.com:7766/</string>-->
+	<string name="server_url">http://23.21.197.37:7766/</string>
+
+	<string name="server_error">Error while communicating with server.</string>
+
+	<string name="magnetic_field">Magnetic field</string>
+	<string name="pressure">Pressure</string>
+	<string name="relative_humidity">Relative humidity</string>
+	<string name="temperature">Temperature</string>
+
+	<string name="synchronization_started">Synchronizing with server…</string>
+	<string name="synchronization_finished">Data updated.</string>
+
+	<string name="last_update">Last update</string>
+
+</resources>

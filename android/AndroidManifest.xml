@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		  package="net.sandrogrzicic.sensegrid"
-		  android:versionCode="1"
-		  android:versionName="1.0">
-	<uses-sdk android:minSdkVersion="10"/>
-	<application android:label="@string/app_name">
-		<activity android:name="Main"
-				  android:label="@string/app_name">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-	</application>
-</manifest> 
+      package="net.sandrogrzicic.sensegrid"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="auto"
+      >
+      
+          <uses-sdk
+            android:minSdkVersion="10"
+            android:targetSdkVersion="15"
+            />
+
+    <!-- Internet connectivity check. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- Server synchronization, Google Maps. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+	<!-- Network and GPS geolocation. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application 
+		android:label="@string/app_name" 
+        android:icon="@drawable/ic_launcher"
+		android:hardwareAccelerated="true"
+        >
+        <uses-library android:name="com.google.android.maps"/>
+
+        <activity android:name="SenseGrid"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+    </application>
+</manifest>
