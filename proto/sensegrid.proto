@@ -1,0 +1,52 @@
+package net.sandrogrzicic.sensegrid.proto;
+
+option optimize_for = LITE_RUNTIME;
+
+// * requests
+
+message Node {
+
+	required string id = 1;
+
+    required int32 geoLat = 2;
+    required int32 geoLong = 3;
+    required float geoAccuracy = 4;
+
+    required int64 timestamp = 5;
+
+    repeated Data sensors = 10;
+}
+
+// * common
+
+message Data {
+
+    required Type sensorType = 1;
+
+	required int32 accuracy = 2;
+    repeated float data = 3;
+
+    enum Type {
+        ACCELEROMETER        = 1;
+        MAGNETIC_FIELD       = 2;
+        ORIENTATION          = 3;  // deprecated
+        GYROSCOPE            = 4;
+        LIGHT                = 5;
+        PRESSURE             = 6;
+        TEMPERATURE          = 7;  // deprecated
+        PROXIMITY            = 8;
+        GRAVITY              = 9;  // 9 (2.3)
+		LINEAR_ACCELERATION  = 10; // 9
+        ROTATION_VECTOR      = 11; // 9
+		RELATIVE_HUMIDITY    = 12; // 14 (4.0)
+        AMBIENT_TEMPERATURE  = 13; // 14
+    }
+}
+
+// * replies
+
+message Nodes {
+	repeated Node nodes = 1;
+
+	required int64 timestamp = 2;
+}

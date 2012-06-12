@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	>
+
+	<!--
+	   debug:   0O9Wy2g9zR-F9iFPIy4HsBPI7KWhCDbMzsUJH2A
+	   release: 0qpefOQHE-c1BlLkqyWDotXZ8pOFQLEPFw30yOg
+	-->
+	<com.readystatesoftware.maps.TapControlledMapView
+		android:id="@+id/gridView"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_gravity="center_horizontal"
+		android:clickable="true"
+		android:apiKey="0qpefOQHE-c1BlLkqyWDotXZ8pOFQLEPFw30yOg"
+		/>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dp"
+		android:orientation="horizontal"
+		android:background="#AA000000"
+		android:gravity="center"
+		>
+		<Button
+			android:id="@+id/mapTypeSwitch"
+			android:background="@android:drawable/ic_menu_mapmode"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="toggleMapType"
+			android:layout_marginRight="20dp"
+			/>
+
+		<Button
+			android:id="@+id/mapProviderSwitch"
+			android:background="@android:drawable/ic_menu_mylocation"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="toggleLocationProvider"
+			/>
+
+		<Button
+			android:id="@+id/mapMoveToLocation"
+			android:background="@android:drawable/ic_menu_compass"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="centerOnCurrentLocation"
+			android:layout_marginLeft="20dp"
+			/>
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/syncData"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="15dp"
+		android:layout_marginTop="13dp"
+		android:layout_gravity="left"
+		android:background="@drawable/ic_menu_refresh"
+		android:onClick="syncData"
+		/>
+
+	<TextView
+		android:id="@+id/nodeCount"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="0"
+		android:textStyle="bold"
+		android:textSize="20dp"
+		android:layout_marginRight="17dp"
+		android:layout_marginTop="17dp"
+		android:layout_gravity="right"
+
+		/>
+
+</FrameLayout>
