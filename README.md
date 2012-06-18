@@ -1,1 +1,1 @@
-Završni rad.
+SenseGrid is a collaborative environment observation project utilizing mobile devices. It gathers sensor data on mobile devices and periodically sends it to the SenseGrid server, which then transmits this data to all connected devices running a SenseGrid compatible client. 
