@@ -37,7 +37,6 @@ class SenseGrid extends MapActivity {
 
 			centerOnLocation(getLastKnownLocation)
 
-		} else {
 			prefs.edit().putBoolean(SenseGrid.SETTINGS_SETUP, true).apply()
 		}
 	}
