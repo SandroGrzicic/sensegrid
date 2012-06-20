@@ -26,6 +26,7 @@ class SenseGridPlan extends Plan with ServerErrorResponse with DeferralExecutor 
 				/*println(m.id + "\t" + new Date(m.timestamp).toString + "\t" + m.geoLat + " " + m.geoLong + " (" + data.size + ") " +
 				  math.sqrt(m.sensors(0).data.map(a => a * a).sum))
 				*/
+
 			}
 
 			ResponseBytes(
@@ -38,11 +39,14 @@ class SenseGridPlan extends Plan with ServerErrorResponse with DeferralExecutor 
 			//println(new Date().toString + "\t" + req.method + " from " + req.remoteAddr)
 			Pass
 	}
+
+	def beforeStop() {
+		data.save()
+	}
 }
 
-object SenseGridPlan {
-	/** Executor koji se koristi za pridjeljivanje dretvi zahtjevima. */
-	lazy val underlying = new MemoryAwareThreadPoolExecutor(16, 65536, 1048576)
 
+object SenseGridPlan {
+	lazy val underlying = new MemoryAwareThreadPoolExecutor(16, 65536, 1048576)
 }
 

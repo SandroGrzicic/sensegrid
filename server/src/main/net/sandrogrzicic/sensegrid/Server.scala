@@ -10,6 +10,10 @@ object Server extends App {
 
 	val HTTP_PORT = 7766
 
-	unfiltered.netty.Http(HTTP_PORT).plan(new SenseGridPlan()).run()
+	val plan = new SenseGridPlan()
+
+	val beforeStop = () => plan.beforeStop()
+
+	unfiltered.netty.Http(HTTP_PORT, "0.0.0.0", Nil, beforeStop).plan(plan).run()
 
 }

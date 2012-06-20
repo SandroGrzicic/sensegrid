@@ -20,6 +20,8 @@ trait Model {
 	def nodes: Iterable[Value]
 
 	def size: Int
+
+	def save()
 }
 
 object Model {
