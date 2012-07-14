@@ -69,7 +69,7 @@ class ServerTask(val context: Context, val serverURL: String, incomingMessageFun
 }
 
 object ServerTask {
-	val CONNECT_TIMEOUT = 4000
+	val CONNECT_TIMEOUT = 10000
 
 	val SUBMIT_ROUTE = "s"
 }
